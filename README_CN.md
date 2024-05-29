@@ -108,9 +108,13 @@ audio_array_en = chat.infer(inputs_en, params_refine_text=params_refine_text)
 ## 常见问题
 
 ##### 连不上HuggingFace
-请使用[modelscope](https://www.modelscope.cn/models/pzc163/chatTTS)的版本. 并设置cache的位置:
+请下载[modelscope](https://www.modelscope.cn/models/pzc163/chatTTS)的版本. 并设置`local_path`的位置:
 ```python
-
+chat = ChatTTS.Chat()
+chat.load_models(
+    source="local",
+    local_path="/path/to/chatTTS",
+)
 ```
 
 ##### 我要多少显存? Infer的速度是怎么样的?
